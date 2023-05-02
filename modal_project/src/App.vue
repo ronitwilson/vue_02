@@ -1,15 +1,31 @@
 <template>
-  <h1>  First vue app by {{ user }}</h1>
+  <h1 :class="{ron: is_italized}" ref="my_header">  First vue app by {{ user }}</h1>
+  <button @click="new_change_method"> Make the line italized</button>
+  <Modal />
 </template>
 
 <script>
 
+import Modal from './components/Modal.vue'
+
 export default {
   name: 'App',
+  components: {Modal},
   data() {
     return {
-      user: 'Ronit'
+      user: 'Ronit',
+      is_italized: false
     }
+    },
+    methods: {
+      change() {
+        this.user = this.user + "_modified"
+        this.is_italized = true
+      },
+      new_change_method() {
+        console.log(this.$refs.my_header)
+        this.$refs.my_header.classList.add('ron')
+      }
   }
 }
 </script>
@@ -22,5 +38,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+h1 {
+  border-bottom: 1px solid #ddd;
+}
+h1.ron {
+  font-style: italic;
 }
 </style>
