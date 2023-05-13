@@ -1,14 +1,19 @@
 <template>
     <div class="backdrop">
         <div class="modal">
+            <h1>{{ prop_1_header }}</h1>
             <p>
-                Modal content
+                {{prop2_text}}
             </p>
         </div>
     </div>
 </template>
-
-<style>
+<script>
+export default {
+    props: ['prop_1_header', 'prop2_text']
+}
+</script>
+<style >
 .modal {
     width: 400px;
     padding: 20px;
@@ -23,4 +28,11 @@
     width: 100%;
     height: 100%;
   }
+
+  .modal h1 {
+    color: #03cfb4;
+    border: none;
+    padding: 0;
+  }
+
 </style>

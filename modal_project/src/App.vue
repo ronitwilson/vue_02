@@ -1,7 +1,7 @@
 <template>
   <h1 :class="{ron: is_italized}" ref="my_header">  First vue app by {{ user }}</h1>
   <button @click="new_change_method"> Make the line italized</button>
-  <Modal />
+  <Modal prop_1_header="Offer for my course!" prop2_text="Only this month"/>
 </template>
 
 <script>
