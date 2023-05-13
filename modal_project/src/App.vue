@@ -1,7 +1,11 @@
 <template>
   <h1 :class="{ron: is_italized}" ref="my_header">  First vue app by {{ user }}</h1>
   <button @click="new_change_method"> Make the line italized</button>
-  <Modal :prop_1_header="header_text" :prop2_text="para_text" :prop3_theme="theme1"/>
+  <div v-if="show_modal" >
+    <Modal :prop_1_header="header_text" :prop2_text="para_text" :prop3_theme="theme1" @close="toggle_modal"/>
+  </div>
+
+  <button @click="toggle_modal"> toggle modal</button>
 </template>
 
 <script>
@@ -17,7 +21,8 @@ export default {
       is_italized: false,
       header_text: "Offer for my course!",
       para_text: "Only this month",
-      theme1: "test_theme"
+      theme1: "test_theme",
+      show_modal: false
     }
     },
     methods: {
@@ -28,7 +33,11 @@ export default {
       new_change_method() {
         console.log(this.$refs.my_header)
         this.$refs.my_header.classList.add('ron')
+      },
+      toggle_modal() {
+        this.show_modal = !this.show_modal
       }
+
   }
 }
 </script>
