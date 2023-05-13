@@ -1,7 +1,7 @@
 <template>
     <div class="backdrop">
         <div class="modal">
-            <h1>{{ prop_1_header }}</h1>
+            <h1 :class="{test_theme: prop3_theme==='test_theme'}">{{ prop_1_header }}</h1>
             <p>
                 {{prop2_text}}
             </p>
@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-    props: ['prop_1_header', 'prop2_text']
+    props: ['prop_1_header', 'prop2_text', 'prop3_theme']
 }
 </script>
 <style >
@@ -31,6 +31,12 @@ export default {
 
   .modal h1 {
     color: #03cfb4;
+    border: none;
+    padding: 0;
+  }
+
+  .modal h1.test_theme {
+    color: #4a03cf;
     border: none;
     padding: 0;
   }

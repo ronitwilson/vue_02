@@ -1,7 +1,7 @@
 <template>
   <h1 :class="{ron: is_italized}" ref="my_header">  First vue app by {{ user }}</h1>
   <button @click="new_change_method"> Make the line italized</button>
-  <Modal prop_1_header="Offer for my course!" prop2_text="Only this month"/>
+  <Modal :prop_1_header="header_text" :prop2_text="para_text" :prop3_theme="theme1"/>
 </template>
 
 <script>
@@ -14,7 +14,10 @@ export default {
   data() {
     return {
       user: 'Ronit',
-      is_italized: false
+      is_italized: false,
+      header_text: "Offer for my course!",
+      para_text: "Only this month",
+      theme1: "test_theme"
     }
     },
     methods: {
