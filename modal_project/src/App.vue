@@ -2,7 +2,14 @@
   <h1 :class="{ron: is_italized}" ref="my_header">  First vue app by {{ user }}</h1>
   <button @click="new_change_method"> Make the line italized</button>
   <div v-if="show_modal" >
-    <Modal :prop_1_header="header_text" :prop2_text="para_text" :prop3_theme="theme1" @close="toggle_modal"/>
+    <Modal :prop_1_header="header_text" :prop2_text="para_text" :prop3_theme="theme1" @close="toggle_modal">
+      <p> using the slot feature</p>
+      <template v-slot:links>
+        <a href="#">link1</a>
+        <p></p>
+        <a href="#">link2</a>
+      </template>
+    </Modal>
   </div>
 
   <button @click.alt="toggle_modal"> toggle modal (alt)</button>

@@ -4,6 +4,10 @@
             <h1 :class="{test_theme: prop3_theme==='test_theme'}">{{ prop_1_header }}</h1>
             <p>
                 {{prop2_text}}
+                <slot></slot>
+                <div class="actions">
+                  <slot name="links"></slot>
+                </div>
             </p>
         </div>
     </div>
