@@ -1,5 +1,5 @@
 <template>
-    <div class="backdrop" @click="toggle_modal">
+    <div class="backdrop" @click.self="toggle_modal">
         <div class="modal">
             <h1 :class="{test_theme: prop3_theme==='test_theme'}">{{ prop_1_header }}</h1>
             <p>

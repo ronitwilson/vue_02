@@ -5,7 +5,7 @@
     <Modal :prop_1_header="header_text" :prop2_text="para_text" :prop3_theme="theme1" @close="toggle_modal"/>
   </div>
 
-  <button @click="toggle_modal"> toggle modal</button>
+  <button @click.alt="toggle_modal"> toggle modal (alt)</button>
 </template>
 
 <script>
